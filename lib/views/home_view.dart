@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:tunes_app/models/tune_model.dart';
 import 'package:tunes_app/widgets/tune_item.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   static const homeView = 'HomeView';
 
-  final List<Color> tuneColors = [
-    Color(0xffF44336),
-    Color.fromARGB(255, 54, 57, 244),
-    Color.fromARGB(255, 89, 244, 54),
-    Color.fromARGB(255, 190, 204, 33),
-    Color.fromARGB(255, 217, 73, 63),
-    Color.fromARGB(255, 136, 54, 244),
-    Color.fromARGB(255, 81, 224, 107),
+  final List<TuneModel> tunes = const [
+    TuneModel(color: Color(0xffF44336), sound: 'note1.wav'),
+    TuneModel(color: Color(0xffF89800), sound: 'note2.wav'),
+    TuneModel(color: Color(0xffFEEB3B), sound: 'note3.wav'),
+    TuneModel(color: Color(0xff4CAF50), sound: 'note4.wav'),
+    TuneModel(color: Color(0xff2F9688), sound: 'note5.wav'),
+    TuneModel(color: Color(0xff2896F3), sound: 'note6.wav'),
+    TuneModel(color: Color(0xff9C27B0), sound: 'note7.wav'),
   ];
 
   @override
@@ -32,7 +33,7 @@ class HomeView extends StatelessWidget {
         children:
             // getTuneIeems(),
 
-            tuneColors.map((color) => TuneItem(color: color)).toList(),
+            tunes.map((tune) => TuneItem(tuneModel: tune)).toList(),
       ),
     );
   }
