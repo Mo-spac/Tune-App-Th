@@ -16,7 +16,10 @@ class TunesApp extends StatelessWidget {
         HomeView.homeView: (context) => HomeView(),
       },
       initialRoute: HomeView.homeView,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(
+        color: Color(0xff253238),
+      )),
     );
   }
 }
